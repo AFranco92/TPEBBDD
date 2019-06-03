@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2019-05-31 19:51:20.812
+-- Last modification date: 2019-06-03 23:13:17.852
 
 -- tables
 -- Table: GR10_ALQUILER
@@ -77,7 +77,7 @@ CREATE TABLE GR10_MOV_INTERNO (
     nro_estanteria int  NOT NULL,
     nro_fila int  NOT NULL,
     id_movimiento_interno int  NULL,
-    id_movmiento_entrada int  NOT NULL,
+    id_movmiento_entrada int  NULL,
     CONSTRAINT PK_GR10_MOV_INTERNO PRIMARY KEY (id_movimiento)
 );
 
@@ -223,3 +223,79 @@ ALTER TABLE GR10_MOV_INTERNO ADD CONSTRAINT GR10_MOV_INTERNO_GR10_MOV_INTERNO
 ;
 
 -- End of file.
+
+
+INSERT INTO GR10_CLIENTE (cuit_cuil, nombre, apellido, fecha_alta) VALUES
+(3022249, 'Norbie', 'Jeffryes', '2018-10-30 23:54:12'),
+(3218717, 'Tersina', 'Van Giffen', '2019-05-11 17:16:22'),
+(2519589, 'Jefferson', 'Helks', '2018-12-24 03:48:54'),
+(3096332, 'Quinlan', 'Leyson', '2019-05-16 03:25:50'),
+(2859710, 'Yelena', 'Menco', '2019-02-27 03:38:53');
+
+INSERT INTO GR10_ALQUILER (id_alquiler, id_cliente, fecha_desde, fecha_hasta, importe_dia) VALUES
+( 1, 2859710, '2019-05-25', '2020-02-22', 191.52),
+( 2, 3022249, '2019-05-25', '2020-02-22', 406.85),
+( 3, 3218717, '2019-05-25', '2020-02-22', 438.38),
+( 4, 2519589, '2019-05-25', '2020-02-22', 760.51),
+( 5, 3096332, '2019-05-25', '2020-02-22', 939.25);
+
+
+INSERT INTO GR10_ESTANTERIA (nro_estanteria, nombre_estanteria) VALUES
+(1, 'EMPRESAS'),
+(2, 'PYMES'),
+(3, 'HOGARES'),
+(4, 'INSTITUCIONES'),
+(5, 'HOSPITALES');
+
+INSERT INTO GR10_FILA (nro_estanteria, nro_fila, nombre_fila, peso_max_kg) VALUES
+(1, 1, 'A', 1000),
+(2, 2, 'B', 1500),
+(3, 3, 'C', 3000),
+(4, 4, 'D', 1250),
+(5, 5, 'E', 1750);
+
+INSERT INTO GR10_POSICION (nro_posicion, nro_estanteria, nro_fila, pos_global, tipo) VALUES
+(1, 1, 1, 1, 'General'),
+(2, 2, 2, 2, 'General'),
+(3, 3, 3, 3, 'General'),
+(4, 4, 4, 4, 'General'),
+(5, 5, 5, 5, 'General');
+
+INSERT INTO GR10_ALQUILER_POSICIONES (id_alquiler, nro_posicion, nro_estanteria, nro_fila, estado) VALUES
+(1),
+(2),
+(3),
+(4),
+(5);
+
+INSERT INTO GR10_PALLET (cod_pallet, descripcion, peso) VALUES
+('GH22', ' Brain Stem using Heavy ', 150),
+('GH23', ' Brain Stem using Heavy ', 250),
+('GH25', ' Brain Stem using Heavy ', 550),
+('GH20', ' Brain Stem using Heavy ', 160),
+('GH21', ' Brain Stem using Heavy ', 580);
+
+INSERT INTO GR10_MOVIMIENTO (id_movimiento, fecha, responsable, tipo) VALUES
+(1, '2019-02-13', 'ENCARGADO', 'e'),
+(2, '2019-05-12', 'ENCARGADO', 'e'),
+(3, '2019-04-10', 'ENCARGADO', 'e'),
+(4, '2019-06-19', 'ENCARGADO', 'e'),
+(5, '2019-08-25', 'ENCARGADO', 'e'),
+(6, '2019-10-25', 'ENCARGADO', 's'),
+(7, '2019-11-25', 'ENCARGADO', 's'),
+(8, '2019-10-25', 'ENCARGADO', 'i'),
+(9, '2019-11-25', 'ENCARGADO', 'i');
+
+INSERT INTO GR10_MOV_ENTRADA (id_movimiento, transporte, guia, cod_pallet, id_alquiler, nro_posicion, nro_estanteria, nro_fila) VALUES
+(1, 'PROPIO', '630000000022', 'GH22', 1, 1, 1, 1),
+(2, 'OCA', '630000020222', 'GH21', 1, 2, 2, 3),
+(3, 'CORREO_ARGENTINO', '630030040022', 'GH23', 1, 3, 1, 3),
+(4, 'ANDREANI', '630030060052', 'GH24', 1, 4, 1, 5),
+(5, 'ANDREANI', '630000044022', 'GH25', 1, 5, 1, 5);
+
+INSERT INTO GR10_MOV_SALIDA (id_movimiento, id_movimiento_entrada, transporte, guia) VALUES
+(6, 1,'OCA', '2334232ASD'),
+(7, 2, 'ANDREANI', '2334232ASD');
+
+INSERT INTO GR10_MOV_INTERNO (id_movimiento, id_movmiento_entrada, id_movimiento_interno, razon, nro_posicion, nro_estanteria, nro_fila) VALUES
+(8, 'LIMPIEZA', 6, 1 ,5);
