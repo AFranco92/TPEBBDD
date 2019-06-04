@@ -261,7 +261,8 @@ INSERT INTO GR10_POSICION (nro_posicion, nro_estanteria, nro_fila, pos_global, t
 (2, 2, 2, 2, 'General'),
 (3, 3, 3, 3, 'General'),
 (4, 4, 4, 4, 'General'),
-(5, 5, 5, 5, 'General');
+(5, 5, 5, 5, 'General'),
+(6, 2, 2, 6, 'General');
 
 INSERT INTO GR10_ALQUILER_POSICIONES (id_alquiler, nro_posicion, nro_estanteria, nro_fila, estado) VALUES
 (1,1,1,1, true),

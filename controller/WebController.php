@@ -17,11 +17,11 @@
 	  		$this->view->showIndex($titulo);
 	  	}
 
-		public function detalleReporte($params)
+		public function posicionesLibres()
 		{
-			$id_reporte = $params[0];
-			$reporte = $this->model->getReporte($id_reporte);
-			$this->view->showReporte($reporte);
+			$fecha = $_POST['fecha'];
+			$posiciones = $this->model->getPosicionesLibres($fecha);
+			$this->view->showPosiciones($posiciones);
 		}
 	}
  ?>

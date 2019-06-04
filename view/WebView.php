@@ -1,8 +1,8 @@
-<?php 
+<?php
 	class WebView extends View
 	{
 
-		function showIndex($titulo) 
+		function showIndex($titulo)
 		{
 			$this->smarty->assign('titulo', $titulo);
 			$this->smarty->display('templates/index.tpl');
@@ -12,10 +12,10 @@
 			$this->smarty->display('templates/admin.tpl');
 		}
 
-		function showReporte($reporte)
+		function showPosiciones($posiciones)
 		{
-			$this->smarty->assign('reporte',$reporte);
-			$this->smarty->display('templates/reporte.tpl');
+			$this->smarty->assign('posiciones',$posiciones);
+			$this->smarty->display('templates/posiciones.tpl');
 		}
 
 	}
