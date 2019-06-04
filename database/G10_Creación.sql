@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2019-06-03 23:13:17.852
+-- Last modification date: 2019-06-04 19:13:28.7
 
 -- tables
 -- Table: GR10_ALQUILER
@@ -225,6 +225,8 @@ ALTER TABLE GR10_MOV_INTERNO ADD CONSTRAINT GR10_MOV_INTERNO_GR10_MOV_INTERNO
 -- End of file.
 
 
+
+
 INSERT INTO GR10_CLIENTE (cuit_cuil, nombre, apellido, fecha_alta) VALUES
 (3022249, 'Norbie', 'Jeffryes', '2018-10-30 23:54:12'),
 (3218717, 'Tersina', 'Van Giffen', '2019-05-11 17:16:22'),
@@ -290,8 +292,7 @@ INSERT INTO GR10_MOV_ENTRADA (id_movimiento, transporte, guia, cod_pallet, id_al
 (1, 'PROPIO', '630000000022', 'GH22', 1, 1, 1, 1),
 (2, 'OCA', '630000020222', 'GH21', 2, 2, 2, 2),
 (3, 'CORREO_ARGENTINO', '630030040022', 'GH23', 3, 3, 3, 3),
-(4, 'ANDREANI', '630030060052', 'GH20', 4, 4, 4, 4),
-(5, 'ANDREANI', '630000044022', 'GH25', 5, 5, 5, 5);
+(4, 'ANDREANI', '630030060052', 'GH20', 4, 4, 4, 4);
 
 INSERT INTO GR10_MOV_SALIDA (id_movimiento, id_movimiento_entrada, transporte, guia) VALUES
 (6, 1,'OCA', '2334232ASD'),

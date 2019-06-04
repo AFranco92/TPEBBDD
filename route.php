@@ -1,12 +1,12 @@
 <?php
     define('ACTION', 0);
     define('PARAMS', 1);
-  
-    include_once 'web/config/ConfigApp.php';
-    include_once 'web/model/Model.php';
-    include_once 'web/view/View.php';
-    include_once 'web/controller/Controller.php';
-    include_once 'web/controller/WebController.php'; 
+
+    include_once 'config/ConfigApp.php';
+    include_once 'model/Model.php';
+    include_once 'view/View.php';
+    include_once 'controller/Controller.php';
+    include_once 'controller/WebController.php'; 
 
     function parseURL($url)
     {
@@ -33,4 +33,4 @@
             }
         }
     }
-?>  
+?>
