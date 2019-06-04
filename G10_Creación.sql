@@ -262,11 +262,11 @@ INSERT INTO GR10_POSICION (nro_posicion, nro_estanteria, nro_fila, pos_global, t
 (5, 5, 5, 5, 'General');
 
 INSERT INTO GR10_ALQUILER_POSICIONES (id_alquiler, nro_posicion, nro_estanteria, nro_fila, estado) VALUES
-(1),
-(2),
-(3),
-(4),
-(5);
+(1,1,1,1, true),
+(2,2,2,2, true),
+(3,3,3,3, true),
+(4,4,4,4, true),
+(5,5,5,5, true);
 
 INSERT INTO GR10_PALLET (cod_pallet, descripcion, peso) VALUES
 ('GH22', ' Brain Stem using Heavy ', 150),
@@ -288,14 +288,14 @@ INSERT INTO GR10_MOVIMIENTO (id_movimiento, fecha, responsable, tipo) VALUES
 
 INSERT INTO GR10_MOV_ENTRADA (id_movimiento, transporte, guia, cod_pallet, id_alquiler, nro_posicion, nro_estanteria, nro_fila) VALUES
 (1, 'PROPIO', '630000000022', 'GH22', 1, 1, 1, 1),
-(2, 'OCA', '630000020222', 'GH21', 1, 2, 2, 3),
-(3, 'CORREO_ARGENTINO', '630030040022', 'GH23', 1, 3, 1, 3),
-(4, 'ANDREANI', '630030060052', 'GH24', 1, 4, 1, 5),
-(5, 'ANDREANI', '630000044022', 'GH25', 1, 5, 1, 5);
+(2, 'OCA', '630000020222', 'GH21', 2, 2, 2, 2),
+(3, 'CORREO_ARGENTINO', '630030040022', 'GH23', 3, 3, 3, 3),
+(4, 'ANDREANI', '630030060052', 'GH20', 4, 4, 4, 4),
+(5, 'ANDREANI', '630000044022', 'GH25', 5, 5, 5, 5);
 
 INSERT INTO GR10_MOV_SALIDA (id_movimiento, id_movimiento_entrada, transporte, guia) VALUES
 (6, 1,'OCA', '2334232ASD'),
 (7, 2, 'ANDREANI', '2334232ASD');
 
-INSERT INTO GR10_MOV_INTERNO (id_movimiento, id_movmiento_entrada, id_movimiento_interno, razon, nro_posicion, nro_estanteria, nro_fila) VALUES
-(8, 'LIMPIEZA', 6, 1 ,5);
+INSERT INTO GR10_MOV_INTERNO (id_movimiento, razon, nro_posicion, nro_estanteria, nro_fila, id_movimiento_interno, id_movmiento_entrada) VALUES
+(8, 'LIMPIEZA', 2, 2 ,2, NULL, 1);
