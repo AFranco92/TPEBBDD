@@ -257,12 +257,12 @@ INSERT INTO GR10_FILA (nro_estanteria, nro_fila, nombre_fila, peso_max_kg) VALUE
 (5, 5, 'E', 1750);
 
 INSERT INTO GR10_POSICION (nro_posicion, nro_estanteria, nro_fila, pos_global, tipo) VALUES
-(1, 1, 1, 1, 'General'),
-(2, 2, 2, 2, 'General'),
-(3, 3, 3, 3, 'General'),
-(4, 4, 4, 4, 'General'),
-(5, 5, 5, 5, 'General'),
-(6, 2, 2, 6, 'General');
+(1, 1, 1, 1, 'general'),
+(2, 2, 2, 2, 'general'),
+(3, 3, 3, 3, 'general'),
+(4, 4, 4, 4, 'general'),
+(5, 5, 5, 5, 'general'),
+(6, 2, 2, 6, 'general');
 
 INSERT INTO GR10_ALQUILER_POSICIONES (id_alquiler, nro_posicion, nro_estanteria, nro_fila, estado) VALUES
 (1,1,1,1, true),
