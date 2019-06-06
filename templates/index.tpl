@@ -12,7 +12,7 @@
 			<div class="container">
 				<h1>Warehouse Management System</h1>
 				<h2>Buscar posiciones</h2>
-				<form class="main" action="posicionesLibres" method="post">
+				<form  id="form" class="main" action="posicionesLibres" method="post">
 				  <fieldset>
 				    <div class="form-group">
 				      <label for="campo1">Buscar por fecha</label>
@@ -26,16 +26,7 @@
 				  </fieldset>
 				</form>
 				<table class="resultado">
-					<thead>
-						<tr>
-							<td>
-								Fecha
-							</td>
-							<td>
-								Posiciones
-							</td>
-						</tr>
-					</thead>
+					
 					<tbody>
 
 					</tbody>
@@ -43,5 +34,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/ajax.js"></script>
 </body>
 </html>

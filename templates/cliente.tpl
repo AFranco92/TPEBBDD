@@ -9,6 +9,9 @@
 		<td>
 			Nro Posicion
 		</td>
+    <td>
+      Estado
+    </td>
 	</tr>
 </thead>
 <tbody>
@@ -17,5 +20,7 @@
 		<td>{$posicion['nro_estanteria']}</td>
 		<td>{$posicion['nro_fila']}</td>
 		<td>{$posicion['nro_posicion']}</td>
+    <td>{if $posicion['estado'] eq 1} OCUPADO {/if}</td>
+
 		{/foreach}
 	</tr>

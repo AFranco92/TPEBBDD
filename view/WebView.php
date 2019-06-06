@@ -18,5 +18,11 @@
 			$this->smarty->display('templates/posiciones.tpl');
 		}
 
+		function showPosicionesCliente($posiciones)
+		{
+			$this->smarty->assign('posiciones',$posiciones);
+			$this->smarty->display('templates/cliente.tpl');
+		}
+
 	}
  ?>

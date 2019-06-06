@@ -17,11 +17,18 @@
 	  		$this->view->showIndex($titulo);
 	  	}
 
-		public function posicionesLibres()
+		public function posicionesLibres($params = '')
 		{
-			$fecha = $_POST['fecha'];
+			$fecha = date("Y-m-d", strtotime($params[0]));
 			$posiciones = $this->model->getPosicionesLibres($fecha);
 			$this->view->showPosiciones($posiciones);
+		}
+
+		public function posicionesCliente($params = '')
+		{
+			$cliente = $params[0];
+			$posiciones = $this->model->getPosicionesCliente($cliente);
+			$this->view->showPosicionesCliente($posiciones);
 		}
 	}
  ?>

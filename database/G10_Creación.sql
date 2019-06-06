@@ -77,7 +77,7 @@ CREATE TABLE GR10_MOV_INTERNO (
     nro_estanteria int  NOT NULL,
     nro_fila int  NOT NULL,
     id_movimiento_interno int  NULL,
-    id_movmiento_entrada int  NULL,
+    id_movimiento_entrada int  NULL,
     CONSTRAINT PK_GR10_MOV_INTERNO PRIMARY KEY (id_movimiento)
 );
 
@@ -208,7 +208,7 @@ ALTER TABLE GR10_POSICION ADD CONSTRAINT FK_GR10_POSICION_FILA
 
 -- Reference: GR10_MOV_INTERNO_GR10_MOV_ENTRADA (table: GR10_MOV_INTERNO)
 ALTER TABLE GR10_MOV_INTERNO ADD CONSTRAINT GR10_MOV_INTERNO_GR10_MOV_ENTRADA
-    FOREIGN KEY (id_movmiento_entrada)
+    FOREIGN KEY (id_movimiento_entrada)
     REFERENCES GR10_MOV_ENTRADA (id_movimiento)
     NOT DEFERRABLE
     INITIALLY IMMEDIATE
@@ -299,5 +299,5 @@ INSERT INTO GR10_MOV_SALIDA (id_movimiento, id_movimiento_entrada, transporte, g
 (6, 1,'OCA', '2334232ASD'),
 (7, 2, 'ANDREANI', '2334232ASD');
 
-INSERT INTO GR10_MOV_INTERNO (id_movimiento, razon, nro_posicion, nro_estanteria, nro_fila, id_movimiento_interno, id_movmiento_entrada) VALUES
+INSERT INTO GR10_MOV_INTERNO (id_movimiento, razon, nro_posicion, nro_estanteria, nro_fila, id_movimiento_interno, id_movimiento_entrada) VALUES
 (8, 'LIMPIEZA', 2, 2 ,2, NULL, 1);

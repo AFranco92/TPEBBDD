@@ -7,7 +7,9 @@
       [
         '' => 'WebController#index',
         'index' => 'WebController#index',
-        'posicionesLibres' => 'WebController#posicionesLibres'
+        'posicionesLibres' => 'WebController#posicionesLibres',
+				'posicionesCliente' => 'WebController#posicionesCliente'
+
       ];
 	}
 ?>
