@@ -4,7 +4,7 @@
 ALTER TABLE GR10_ALQUILER ADD CONSTRAINT CHK_FECHA_ALQUILER
 CHECK ( (fecha_hasta IS NULL)  OR fecha_desde <= fecha_hasta);
 
--- UPDATE "unc_248823"."gr10_alquiler" SET "id_alquiler"='5', "id_cliente"='3096332', "fecha_desde"='2020-05-25', "fecha_hasta"='2020-02-22', "importe_dia"='939.25' WHERE "id_alquiler"='5'
+-- INSERT INTO "unc_248823"."gr10_alquiler" ("id_alquiler","id_cliente","fecha_desde","fecha_hasta","importe_dia") VALUES ('6','2519589','2018-06-05','2017-06-05','100')
 
 --PUNTO B- INCISO B
 
@@ -29,26 +29,31 @@ RETURN NEW;
 END;$$
 LANGUAGE plpgsql;
 
+
 CREATE TRIGGER TRFN_GR10_PESO_VALIDO
-AFTER INSERT OR UPDATE OF peso ON GR10_PALLET
+AFTER UPDATE OF peso ON GR10_PALLET
 FOR EACH ROW
 EXECUTE PROCEDURE FN_GR10_VERIFICAR_PESO();
 
+-- UPDATE "unc_248823"."gr10_pallet" SET "cod_pallet"='GH21', "descripcion"=' Brain Stem using Heavy ', "peso"='2000' WHERE "cod_pallet"='GH21'
+
 CREATE TRIGGER TRFN_GR10_PESO_VALIDO_FILA
-AFTER INSERT OR UPDATE OF peso_max_kg ON GR10_FILA
+AFTER UPDATE OF peso_max_kg ON GR10_FILA
 FOR EACH ROW
 EXECUTE PROCEDURE FN_GR10_VERIFICAR_PESO();
+
+-- UPDATE "unc_248823"."gr10_fila" SET "nro_estanteria"='2', "nro_fila"='2', "nombre_fila"='B', "peso_max_kg"='150' WHERE "nro_estanteria"='2' AND "nro_fila"='2'
+
 
 CREATE TRIGGER TRFN_GR10_MOVIMIENTO_ENTRADA
 AFTER INSERT OR UPDATE OF nro_fila ON GR10_MOV_ENTRADA
 FOR EACH ROW
 EXECUTE PROCEDURE FN_GR10_VERIFICAR_PESO();
 
+-- INSERT INTO GR10_MOV_ENTRADA (id_movimiento, transporte, guia, cod_pallet, id_alquiler, nro_posicion, nro_estanteria, nro_fila) VALUES (4, 'ANDREANI', '630030060052', 'GH20', 4, 4, 4, 4);
 
 
---AGREGAR INSERT
-
---PUNTO B- INCISO B
+--PUNTO B- INCISO C
 
 CREATE DOMAIN posicion_valida
 AS varchar NOT NULL
@@ -60,7 +65,7 @@ ALTER TABLE GR10_POSICION
 ALTER COLUMN tipo
 SET DATA TYPE posicion_valida;
 
--- INSERT INTO GR10_POSICION (nro_posicion, nro_estanteria, nro_fila, pos_global, tipo) VALUES (1, 1, 1, 1, 'General')
+-- INSERT INTO GR10_POSICION (nro_posicion, nro_estanteria, nro_fila, pos_global, tipo) VALUES (1, 1, 1, 1, 'Medicamentos')
 
 
 ----------------------------------------------------------------------------------------------

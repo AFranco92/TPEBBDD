@@ -272,10 +272,10 @@ INSERT INTO GR10_ALQUILER_POSICIONES (id_alquiler, nro_posicion, nro_estanteria,
 (5,5,5,5, true);
 
 INSERT INTO GR10_PALLET (cod_pallet, descripcion, peso) VALUES
-('GH22', ' Brain Stem using Heavy ', 150),
+('GH22', ' Brain Stem using Heavy ', 950),
 ('GH23', ' Brain Stem using Heavy ', 250),
 ('GH25', ' Brain Stem using Heavy ', 550),
-('GH20', ' Brain Stem using Heavy ', 160),
+('GH20', ' Brain Stem using Heavy ', 1500),
 ('GH21', ' Brain Stem using Heavy ', 580);
 
 INSERT INTO GR10_MOVIMIENTO (id_movimiento, fecha, responsable, tipo) VALUES
@@ -292,8 +292,7 @@ INSERT INTO GR10_MOVIMIENTO (id_movimiento, fecha, responsable, tipo) VALUES
 INSERT INTO GR10_MOV_ENTRADA (id_movimiento, transporte, guia, cod_pallet, id_alquiler, nro_posicion, nro_estanteria, nro_fila) VALUES
 (1, 'PROPIO', '630000000022', 'GH22', 1, 1, 1, 1),
 (2, 'OCA', '630000020222', 'GH21', 2, 2, 2, 2),
-(3, 'CORREO_ARGENTINO', '630030040022', 'GH23', 3, 3, 3, 3),
-(4, 'ANDREANI', '630030060052', 'GH20', 4, 4, 4, 4);
+(3, 'CORREO_ARGENTINO', '630030040022', 'GH23', 3, 3, 3, 3);
 
 INSERT INTO GR10_MOV_SALIDA (id_movimiento, id_movimiento_entrada, transporte, guia) VALUES
 (6, 1,'OCA', '2334232ASD'),
