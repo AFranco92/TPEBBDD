@@ -26,10 +26,6 @@
 				  </fieldset>
 				</form>
 				<table class="resultado">
-					
-					<tbody>
-
-					</tbody>
 				</table>
 			</div>
 		</div>

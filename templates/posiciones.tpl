@@ -12,10 +12,11 @@
 	</tr>
 </thead>
 <tbody>
+	{foreach from=$posiciones item=posicion}
 	<tr>
-		{foreach from=$posiciones item=posicion}
 		<td>{$posicion['nro_estanteria']}</td>
 		<td>{$posicion['nro_fila']}</td>
 		<td>{$posicion['nro_posicion']}</td>
-		{/foreach}
 	</tr>
+	{/foreach}
+</tbody>
